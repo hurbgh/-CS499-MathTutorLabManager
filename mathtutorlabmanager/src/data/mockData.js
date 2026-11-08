@@ -1,5 +1,5 @@
 // Mock data adapted from my databases course project (tutor lab system)
-
+//The data was copied from database make word document with the help of ai to make sure I made no typos of emails
 export const tutors = [
   { email_id: "gm163", full_name: "Gary Moore", phone_number: "17416139367" },
   { email_id: "ab995", full_name: "Alyx Baker", phone_number: "13594276989" },
