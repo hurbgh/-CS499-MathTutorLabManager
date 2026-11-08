@@ -5,6 +5,7 @@ import "./App.css"
 import StudentSignIn from "./components/StudentSignIn";
 import { sessionAttendance } from "./data/mockData";
 import TutorSignIn from "./components/TutorSignIn";
+import AdminDashboard from "./components/AdminDashboard";
 
 export default function App(){
     const [tutorSessions,setTutorSessions]=useState([]);
@@ -22,7 +23,7 @@ export default function App(){
             {view === "home"&&<Home/>}
             {view === "student"&&<StudentSignIn onSignIn={handleSignIn}/>}
             {view === "tutor"&&<TutorSignIn onClockIn={handleClockIn}/>}
-            {view === "admin"&&<p>Admn dashboard - {records.length} records on file and {tutorSessions.length} tutor sessions.</p>}
+            {view === "admin"&&<AdminDashboard records={records} tutorSessions={tutorSessions}/>}
         </div>
     )
 }
