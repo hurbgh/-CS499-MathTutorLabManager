@@ -4,11 +4,15 @@ import Home from "./components/Home";
 import "./App.css"
 import StudentSignIn from "./components/StudentSignIn";
 import { sessionAttendance } from "./data/mockData";
+import TutorSignIn from "./components/TutorSignIn";
 
 export default function App(){
+    const [tutorSessions,setTutorSessions]=useState([]);
     const [view,setView]=useState("home");
     const [records,setRecords]=useState(sessionAttendance);
-
+    function handleClockIn(record){
+        setTutorSessions([...tutorSessions,record])
+    }
     function handleSignIn(record){
         setRecords([...records,record]);
     }
@@ -17,8 +21,8 @@ export default function App(){
             <Navbar currentView={view} onSelect={setView}/>
             {view === "home"&&<Home/>}
             {view === "student"&&<StudentSignIn onSignIn={handleSignIn}/>}
-            {view === "tutor"&&<p>Tutor sign-in put here</p>}
-            {view === "admin"&&<p>Admn dashboard - {records.length} records on file</p>}
+            {view === "tutor"&&<TutorSignIn onClockIn={handleClockIn}/>}
+            {view === "admin"&&<p>Admn dashboard - {records.length} records on file and {tutorSessions.length} tutor sessions.</p>}
         </div>
     )
 }
