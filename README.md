@@ -1,4 +1,43 @@
 # -CS499-MathTutorLabManager
+## Milestone 2
+Live prototype: https://hurbgh.github.io/-CS499-MathTutorLabManager/
+
+CSS for website written with help from AI
+
+Install instructions:
+1. npm install
+2. npm run dev
+3. visit localhost link
+
+Tests:
+If you want to verify the site works, look at the admin dashboard first. Note that there is no recent data in it.
+
+To test student sign in:
+1. jd123 for email id, and John Doe for name
+2. Select any course.
+3. Confirm
+4. See admin dashboard for new data
+
+To test Tutor Clock in:
+1. Type tutor emai id, ab995
+2. Clock in
+3. See admin dashboard tutor section, it should now show a tutor is present
+
+To test Admin Dashboard simply search up a student email id or a course id.
+
+### Component Overview
+- Navbar:
+Allows the user to select where they want to go from a home menu, either student,tutor, or admin. Or back to home.
+- Home
+Welcome screen to fall back to. I added it back because I realized it better and easier to have a test screen that welcomes users and from which I can attach or add things to if need be easily and makes navigation easier.
+- Student Sign In
+It has three stages. First stage is to verify student email id and full name. Once it is verified, it then goes to the next stages where it takes in the class they are here for, then it gives them the done screen which is the third and final stage. This gets added to the record of student sessions.
+- Tutor Sign In
+This is quite simple. A tutor simply inputs their email id, and then selects the button confirming they want to clock in. They get added to the records of tutors currently available today.
+- Admin Dashboard
+I do not know how to implement the username and password. So for now I just have the basic goal it is meant to do, see records. When selected the user can view records, and filter student records by student email id, or class id. They can also see tutoring record of tutors that came today.
+- Mock Data
+The data comes from my prvious database course. This is the data in the database I had for the course. I decided to use some of it for the mock data to test it out and get this prototype. It has 4 arrays: students, tutors, classes, and session attendance. Students is records of students, same with tutors, and courses. Session attendance on the other hand is a record of sessions in which students came and left on what time in what specifc dates to tutoring to get help with a specific course from which specific tutor. 
 ## Title: Math TutorLab Manager
 The application I plan on building is a tutoring service manager that manages and records tutoring services for mathematics. In which math tutors help students struggling with mathematics, and professors can see if a student does go to tutoring or not for help, and math tutors can have their sessions of tutoring tracked so that they can get paid. The application works as a record keeper, makes sure students coming for tutoring can sign in, tutors can have the evidence they came signed, and professors can easily access this website by secure log in and see if tutors are tutoring or not, and if students in their class who struggle came in or not. It solves the problem of making record keeping digitized and clear of spelling errors and writing errors, preventing tutors from forgetting to sign and from signing the name of a friend who was not there, and allows professors to easily know who came or not without needing to pass around a sheet of paper which can easily become lost.
 
